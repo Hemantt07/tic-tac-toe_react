@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Board from './components/Board';
+import Footer from './components/footer';
 
 
 export default function Game() {
@@ -19,12 +20,15 @@ export default function Game() {
   }
 
   return (
-    <div className="game">
-      <div className="left"></div>
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-        <div className="game-info right">
-          <button onClick={() => jumpTo(0)}>Reset</button>
-        </div>
-    </div>
+    <>
+      <div className="game">
+        <div className="left"></div>
+          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+          <div className="game-info right">
+            <button onClick={() => jumpTo(0)}>Reset</button>
+          </div>
+      </div>
+      <Footer />
+    </>
   );
 }
