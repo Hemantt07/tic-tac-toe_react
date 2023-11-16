@@ -1,0 +1,49 @@
+.square {
+    background: #fff;
+    border: 5px solid #8B475D;
+    color: #8B475D;
+    float: left;
+    font-size: 70px;
+    line-height: 34px;
+    height: 134px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 134px;
+}
+button.square.\30 {
+    border-top: none;
+    border-left: none;
+}
+
+button.square.\31 {
+    border-top: none;
+}
+
+button.square.\32 {
+    border-top: none;
+    border-right: none;
+}
+
+button.square.\33 {
+    border-left: none;
+}
+
+button.square.\35 {
+    border-right: none;
+}
+
+button.square.\36 {
+    border-left: none;
+    border-bottom: none;
+}
+
+button.square.\37 {
+    border-bottom: none;
+}
+
+button.square.\38 {
+    border-bottom: none;
+    border-right: none;
+}

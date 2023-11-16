@@ -1,0 +1,34 @@
+.board-row {
+    width: max-content;
+    margin: auto;
+}
+
+.board-row:after {
+    clear: both;
+    content: '';
+    display: table;
+}
+
+.center {
+    width: 600px;
+    height: 100%;
+    text-align: center;
+}
+
+.winner {
+    position: fixed;
+    font-size: 6rem;
+    backdrop-filter :brightness(.3);
+    transform: scale(0);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    color: #cac6c6;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    animation: popup 3s;
+    transition: all 2s;
+    z-index: 1;
+}

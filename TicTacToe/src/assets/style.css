@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&display=swap');
+
+h1,h2,h3,h4,h5,h6{margin-top:0}*,body{padding:0}*{box-sizing:border-box;margin:0;font-family:Poppins,sans-serif!important;box-sizing:border-box}h1{font-size:22px}h2{font-size:20px}h3{font-size:18px}h4{font-size:16px}h5{font-size:14px}h6{font-size:12px}code{font-size:1.2em}ul{padding-inline-start:20px}
+
+body{    
+    font-family: Poppins,sans-serif!important;
+    margin: 10px auto 0;
+    max-width: 600px;
+}
+
+form {
+    width: 90%;
+    margin: 20px auto;
+}
+  
+form h3.form-head {
+  color: #8B475D;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+  
+.form-outline {
+  position: relative;
+}
+  
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #8b475d45;
+  outline: 0;
+  box-shadow: 0 0 6px 1px #d87494ad;
+}
+  
+form .btn-primary:hover,form .btn-primary {
+  margin: auto;
+  display: block;
+  background: #8B475D;
+  border: none;
+}
+
+.right ,.left {
+  width: 200px;
+  height: 100%;
+}
+
+.game {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.game-info button{
+  background-color: #8B475D;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+  
+.removePass {
+  position: absolute;
+  right: 11px;
+  top: 16px;
+  cursor: pointer;
+}
+
+.status {
+  margin-bottom: 16px;
+    font-size: 29px;
+    text-align: center;
+    color: #8B475D;
+}
+
+@media only screen and (max-width: 1023px) {
+  .game{
+    flex-direction: column;
+  }
+
+  .game-info {
+    margin: 40px 0;
+    justify-content: center;
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .game{
+    flex-direction: column;
+  }
+  
+  .game-board.center {
+    width: 100%;
+  }
+  
+  .left {
+    display: none;
+  }
+  
+  .game-info.right {
+    width: 300px;
+      margin: auto;
+  }
+  
+  .status {
+    font-size: 22px;
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+    font-size: 50px;
+  }
+  
+  .game-info button {
+    margin: 40px auto;
+    display: block;
+    font-size: 17px;
+    padding: 6px 14px;
+  }
+
+  h1.winner {
+    font-size: 35px;
+  }
+
+  #footer {
+    font-size: 16px;
+  }
+}
+
+
+@media only screen and (max-width: 319px) {
+  .square {
+    width: 70px;
+    height: 70px;
+    border-width: 2px;
+    font-size: 40px;
+  }
+
+  .game-info.right {
+    width: 210px;
+    margin: auto;
+  }
+
+  .game-info button {
+    margin-top: 30px;
+    font-size: 14px;
+  }
+
+  h1.winner {
+    font-size: 30px;
+  }
+
+  #footer {
+    font-size: 16px;
+  }
+}
+
+
+@keyframes popup {
+  0% {
+    transform: scale(0);
+    backdrop-filter :brightness(1);
+  }
+  20% {
+    transform: scale(1.1);
+    backdrop-filter :brightness(1);
+  }
+  30% {
+    transform: scale(0);
+    backdrop-filter :brightness(1);
+  }
+  40%{
+    transform: scale(1.1);
+    backdrop-filter :brightness(1);
+  }
+  50%{
+    transform: scale(0.9);
+    backdrop-filter :brightness(1);
+  }
+  60% {
+    transform: scale(1.2);
+    backdrop-filter :brightness(.3);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
