@@ -12,10 +12,20 @@
 
         <!-- Scripts -->
         @routes
-        @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
-        @inertiaHead
+        <style>
+            .main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 60vh;
+                font-size: 5vh;
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
-        @inertia
+        @include('navigation-menu')
+        <div class="main">
+            This is a Backend Service
+        </div>
     </body>
 </html>
