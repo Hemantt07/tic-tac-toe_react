@@ -18,6 +18,8 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
+        \Log::info('Request Headers:', $request->headers->all());
+        return $request->all();
         // Validation for Register
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
@@ -59,7 +61,6 @@ class AuthController extends Controller
      */
     function login(Request $request)
     {
-        return ($request->all());
         // Validator for Login
         $validator = Validator::make($request->all(), [
             'email' => 'required',

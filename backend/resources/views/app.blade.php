@@ -25,6 +25,7 @@
     <body class="font-sans antialiased">
         @include('navigation-menu')
         <div class="main">
+            {{ $frontUrl }}
             This is a Backend Service
         </div>
     </body>
