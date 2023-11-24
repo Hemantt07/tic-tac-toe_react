@@ -1,25 +1,29 @@
 .logo {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 .navbar li {
-    padding: 25px;
-    color: #8B475D;
-    line-height: 1;
+  padding: 25px;
+  color: #8b475d;
+  line-height: 1;
 }
 
 .navbar li a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.topbar {
+  height: 100px;
 }
 
 .topbar:after {
-    content: '';
-    position: absolute;
-    width: 105%;
-    height: 2px;
-    background: #963253;
-    left: 0;
-    top: 108px;
+  content: "";
+  position: absolute;
+  width: 105%;
+  height: 2px;
+  background: #963253;
+  left: 0;
+  top: 100px;
 }

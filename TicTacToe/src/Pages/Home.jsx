@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Topbar from '../Components/Topbar/Topbar'
-import Footer from '../Components/Footer/Footer'
-import Board from '../Components/Board/Board'
+import React, { useState } from "react";
+import Topbar from "../Components/Topbar/Topbar";
+import Footer from "../Components/Footer/Footer";
+import Board from "../Components/Board/Board";
 
 export default function Home({ value, onSquareClick, customClass }) {
   const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -21,15 +21,19 @@ export default function Home({ value, onSquareClick, customClass }) {
   return (
     <>
       <div className="main">
-        <Topbar/>
+        <Topbar />
         <div className="game">
-            <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-            <div className="game-info right">
-                <button onClick={() => jumpTo(0)}>Reset</button>
-            </div>
+          <Board
+            xIsNext={xIsNext}
+            squares={currentSquares}
+            onPlay={handlePlay}
+          />
+          <div className="game-info right">
+            <button onClick={() => jumpTo(0)}>Reset</button>
+          </div>
         </div>
       </div>
       <Footer />
     </>
-  )
+  );
 }

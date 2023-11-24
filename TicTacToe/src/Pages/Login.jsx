@@ -1,70 +1,117 @@
-import React, { useRef, useState } from 'react'
-import Topbar from '../Components/Topbar/Topbar'
-import Footer from '../Components/Footer/Footer'
-import { Link } from 'react-router-dom'
-import axios from 'axios';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import React, { useRef, useState } from "react";
+import Topbar from "../Components/Topbar/Topbar";
+import Footer from "../Components/Footer/Footer";
+import { Link, Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 
 export default function Login() {
-  const [ show, setShow ] = useState( false );
-  
-    const handleClick = async (e) => {
-        try {
-            e.preventDefault();
-    
-            const res = await fetch('http://127.0.0.1:8000/');
-            const result = await response.json();
-            console.log(result); 
-        } catch (error) {
-            console.log(error);
+  const APIroute = import.meta.env?.VITE_BASE_PATH_API;
+  const [show, setShow] = useState(false);
+  const [errorMessage, setErrorMessage] = useState([]);
+  const [validate, setValidate] = useState(false);
+  const hide_show_password = async () => {
+    setShow(!show);
+  };
+
+  const loginEmail = useRef(null);
+  const loginPassword = useRef(null);
+
+  const formHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const email = loginEmail.current?.value;
+      const password = loginPassword.current?.value;
+
+      if (email === "" || password === "") {
+        setValidate(true);
+      } else {
+        setValidate(false);
+        const body = JSON.stringify({
+          email: email,
+          password: password,
+        });
+        console.log(body);
+        const response = await fetch(APIroute + "/signIn", {
+          method: "POST",
+          body: body,
+        });
+
+        const data = await response.json();
+        console.log(data);
+        if (data.success) {
+          // toast(data);
+        } else {
+          setErrorMessage(data.message);
         }
-    };
-    const hide_show_password = async()=>{
-        setShow( !show );
+      }
+    } catch (error) {
+      toast.error(error);
     }
-    const email= useRef(null);
-    const password= useRef(null);
+  };
+
+  const handleInputChange = () => {
+    setValidate(false);
+  };
 
   return (
     <>
-    <div className="main">
-        <Topbar/>
-        <div className='login-page'>
-            <form>
-                <h3 className='form-head'>Login</h3>
-                <div className="form-outline form-floating mb-4">
-                    <input type="email" id="loginName" className="form-control" autoComplete='off' placeholder='Username'/>
-                    <label className="form-label" htmlFor="loginName">Email or username</label>
-                </div>
+      <div className="main">
+        <Topbar />
+        <div className="login-page">
+          <form onSubmit={formHandler} autoComplete="off">
+            <h3 className="form-head">Login</h3>
+            <div className="form-outline form-floating mb-4">
+              <input
+                type="email"
+                id="loginEmail"
+                className={`form-control${
+                  validate || errorMessage["email"] ? " is-invalid" : ""
+                }`}
+                placeholder="Email"
+                ref={loginEmail}
+                onChange={handleInputChange}
+              />
+              <label className="form-label" htmlFor="loginEmail">
+                Email
+              </label>
+              <div className="errorMessages">{errorMessage["email"]}</div>
+            </div>
 
-                <div className="form-outline form-floating mb-4">
-                    <input type={show ? 'text' : 'password'} id="loginPassword" className="form-control" autoComplete='off' placeholder='Password'/>
-                    <label className="form-label" htmlFor="loginPassword">Password</label>
-                    <RemoveRedEyeIcon className='removePass' onClick={hide_show_password}/>
-                </div>
+            <div className="form-outline form-floating mb-4">
+              <input
+                type={show ? "text" : "password"}
+                id="loginPassword"
+                className={`form-control${
+                  validate || errorMessage["password"] ? " is-invalid" : ""
+                }`}
+                placeholder="Password"
+                ref={loginPassword}
+                onChange={handleInputChange}
+              />
+              <label className="form-label" htmlFor="loginPassword">
+                Password
+              </label>
+              <div className="errorMessages">{errorMessage["password"]}</div>
+              <RemoveRedEyeIcon
+                className="removePass"
+                onClick={hide_show_password}
+              />
+            </div>
 
-                <div className="row mb-4">
-                    <div className="col-md-6 d-flex justify-content-start">
-                    <div className="form-check mb-3 mb-md-0">
-                        <input className="form-check-input" type="checkbox" id="loginCheck" defaultChecked />
-                        <label className="form-check-label" htmlFor="loginCheck"> Remember me </label>
-                    </div>
-                    </div>
+            <button type="submit" className="btn btn-primary btn-block mb-4">
+              Log in
+            </button>
 
-                    <div className="col-md-6 d-flex justify-content-end">
-                    <a href="#!">Forgot password?</a>
-                    </div>
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block mb-4" onClick={handleClick}>Log in</button>
-
-                <div className="text-center">
-                    <p>Not a member? <Link to={'/register'}>Register</Link></p>
-                </div>
-            </form>
+            <div className="text-center">
+              <p>
+                Not a member? <Link to={"/register"}>Register</Link>
+              </p>
+            </div>
+          </form>
         </div>
-    </div>
-    <Footer/>
+      </div>
+      <Footer />
     </>
-  )
+  );
 }

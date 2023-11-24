@@ -13,37 +13,46 @@
     width: 134px;
 }
 button.square.\30 {
-    border-top: none;
-    border-left: none;
+    border: none;
 }
 
 button.square.\31 {
-    border-top: none;
+    border-width: 0 0px 0 5px;
 }
 
 button.square.\32 {
-    border-top: none;
-    border-right: none;
+    border-width: 0 0 0 5px;
 }
 
 button.square.\33 {
-    border-left: none;
+    border-width: 5px 0 0 0;
+}
+
+button.square.\34 {
+    border-width: 5px 0px 0 5px;
 }
 
 button.square.\35 {
-    border-right: none;
+    border-width: 5px 0px 0 5px;
 }
 
 button.square.\36 {
-    border-left: none;
-    border-bottom: none;
+    border-width: 5px 0 0 0;
 }
 
 button.square.\37 {
-    border-bottom: none;
+    border-width: 5px 0 0 5px;
 }
 
 button.square.\38 {
-    border-bottom: none;
-    border-right: none;
+    border-width: 5px 0 0 5px;
+}
+
+@media only screen and (max-width: 767px) {
+    .square {
+        height: 120px;
+        font-size: 50px;
+        width: 120px;
+        font-weight: 400;
+    }
 }
