@@ -8,9 +8,29 @@ h5,
 h6 {
   margin-top: 0;
 }
+
+body[data-theme="light"] {
+  --bs-body-color: #000;
+  --font-color-global: #8b475d;
+  --bg-color: #fafafa;
+  --footer-bg-color: #fafafa;
+  --bs-body-bg: #ececec;
+  --bs-border-color: #dee2e6;
+}
+
+body[data-theme="dark"] {
+  --bs-body-color: #ada4a4;
+  --bg-color: #121212;
+  --font-color-global: #8b475d;
+  --footer-bg-color: #121212;
+  --bs-body-bg: #1b1b1b;
+  --bs-border-color: #1b1b1b;
+}
+
 body {
   font-family: Poppins, sans-serif !important;
   overflow-x: hidden;
+  background-color: var(--bg-color) !important;
 }
 * {
   box-sizing: border-box;
@@ -53,7 +73,7 @@ ul {
 }
 
 p a {
-  color: #8b475d;
+  color: var(--font-color-global);
 }
 
 form {
@@ -62,7 +82,7 @@ form {
 }
 
 form h3.form-head {
-  color: #8b475d;
+  color: var(--font-color-global);
   font-size: 28px;
   text-align: center;
   margin-bottom: 25px;
@@ -74,8 +94,8 @@ form h3.form-head {
 
 .form-control:focus {
   color: #212529;
-  background-color: #fff;
-  border-color: #8b475d45;
+  background: var(--bs-body-bg) !important;
+  border-color: var(--font-color-global);
   outline: 0;
   box-shadow: 0 0 6px 1px #d87494ad;
 }
@@ -89,7 +109,7 @@ form .btn-primary:hover,
 form .btn-primary {
   margin: auto;
   display: block;
-  background: #8b475d;
+  background: var(--font-color-global);
   border: none;
 }
 
@@ -110,7 +130,7 @@ form .btn-primary {
 }
 
 .game-info button {
-  background-color: #8b475d;
+  background-color: var(--font-color-global);
   color: #fff;
   padding: 5px 17px;
   border: none;
@@ -132,7 +152,7 @@ form .btn-primary {
   margin-bottom: 16px;
   font-size: 40px;
   text-align: center;
-  color: #8b475d;
+  color: var(--font-color-global);
 }
 
 .errorMessages {
@@ -146,6 +166,15 @@ form .btn-primary {
 
 .Toastify {
   display: contents;
+}
+
+.form-control {
+  background: var(--bs-body-bg) !important;
+}
+
+.form-control:focus,
+.form-floating > label {
+  color: var(--bs-body-color) !important;
 }
 
 @media only screen and (max-width: 1023px) {

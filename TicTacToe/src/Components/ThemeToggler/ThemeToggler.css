@@ -1,0 +1,11 @@
+.toggler {
+  cursor: pointer;
+}
+
+.toggler .darkBtn {
+  color: #fafafa;
+}
+
+.toggler .lightBtn {
+  color: #363636;
+}

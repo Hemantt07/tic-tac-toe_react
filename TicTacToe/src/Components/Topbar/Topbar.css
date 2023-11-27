@@ -4,9 +4,10 @@
 }
 
 .navbar li {
-  padding: 25px;
-  color: #8b475d;
+  padding: 0;
+  color: var(--font-color-global);
   line-height: 1;
+  font-size: 18px;
 }
 
 .navbar li a {
@@ -21,9 +22,9 @@
 .topbar:after {
   content: "";
   position: absolute;
-  width: 105%;
+  width: 100%;
   height: 2px;
-  background: #963253;
+  background: var(--font-color-global);
   left: 0;
   top: 100px;
 }

@@ -3,7 +3,7 @@ import Topbar from "../Components/Topbar/Topbar";
 import Footer from "../Components/Footer/Footer";
 import Board from "../Components/Board/Board";
 
-export default function Home({ value, onSquareClick, customClass }) {
+export default function Home() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;

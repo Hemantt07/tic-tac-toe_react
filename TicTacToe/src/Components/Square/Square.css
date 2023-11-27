@@ -1,58 +1,60 @@
 .square {
-    background: #fff;
-    border: 5px solid #8B475D;
-    color: #8B475D;
-    float: left;
-    font-size: 70px;
-    line-height: 34px;
-    height: 134px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 134px;
+  background: var(--bg-color);
+  position: relative;
+  border: 5px solid var(--font-color-global);
+  color: var(--font-color-global);
+  float: left;
+  font-size: 70px;
+  line-height: 34px;
+  height: 134px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 134px;
 }
+
 button.square.\30 {
-    border: none;
+  border: none;
 }
 
 button.square.\31 {
-    border-width: 0 0px 0 5px;
+  border-width: 0 0px 0 5px;
 }
 
 button.square.\32 {
-    border-width: 0 0 0 5px;
+  border-width: 0 0 0 5px;
 }
 
 button.square.\33 {
-    border-width: 5px 0 0 0;
+  border-width: 5px 0 0 0;
 }
 
 button.square.\34 {
-    border-width: 5px 0px 0 5px;
+  border-width: 5px 0px 0 5px;
 }
 
 button.square.\35 {
-    border-width: 5px 0px 0 5px;
+  border-width: 5px 0px 0 5px;
 }
 
 button.square.\36 {
-    border-width: 5px 0 0 0;
+  border-width: 5px 0 0 0;
 }
 
 button.square.\37 {
-    border-width: 5px 0 0 5px;
+  border-width: 5px 0 0 5px;
 }
 
 button.square.\38 {
-    border-width: 5px 0 0 5px;
+  border-width: 5px 0 0 5px;
 }
 
 @media only screen and (max-width: 767px) {
-    .square {
-        height: 120px;
-        font-size: 50px;
-        width: 120px;
-        font-weight: 400;
-    }
+  .square {
+    height: 120px;
+    font-size: 50px;
+    width: 120px;
+    font-weight: 400;
+  }
 }

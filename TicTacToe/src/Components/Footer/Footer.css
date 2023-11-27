@@ -1,14 +1,20 @@
 #footer {
-    padding: 15px 10px;
-    text-align: center;
-    width: 100%;
-    background: #fff;
-    font-size: 18px;
+  padding: 15px 10px;
+  text-align: center;
+  width: 100%;
+  background: var(--footer-bg-color);
+  font-size: 18px;
 }
 
 #footer a {
-    margin-left: 5px;
-    color: #8B475D;
-    font-weight: 600;
-    text-decoration: none;
+  margin-left: 5px;
+  color: var(--font-color-global);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 568px) {
+  #footer a {
+    display: block;
+  }
 }
